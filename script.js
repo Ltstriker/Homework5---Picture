@@ -1,265 +1,122 @@
-
-var data = new Array(1,2,3,
-                     4,5,6,
-                     7,8,9);
-
-
-var whoCanMove = new Array(5,-1,7,-1);
-
+var data = new Array(1,2,3,4,
+                     5,6,7,8,
+                     9,10,11,12,
+                     13,14,15,16);
 var pan = 0;
-var emptyPosition = 8;
+
+var emptyPosition = 16;
+
+window.onload = function()
+{
+  /*for(var c1=1;c1<17;c1++)
+  {
+    (function(c1){
+
+    document.getElementById("block_"+c1.toString()).addEventListener('click',
+      function(){gogogo(c1)},false);
+    })(c1);
+  }*/
+  document.getElementById("block_1").onclick = function(){gogogo(1);};
+  document.getElementById("block_2").onclick = function(){gogogo(2);};
+  document.getElementById("block_3").onclick = function(){gogogo(3);};
+  document.getElementById("block_4").onclick = function(){gogogo(4);};
+  document.getElementById("block_5").onclick = function(){gogogo(5);};
+  document.getElementById("block_6").onclick = function(){gogogo(6);};
+  document.getElementById("block_7").onclick = function(){gogogo(7);};
+  document.getElementById("block_8").onclick = function(){gogogo(8);};
+  document.getElementById("block_9").onclick = function(){gogogo(9);};
+  document.getElementById("block_10").onclick = function(){gogogo(10);};
+  document.getElementById("block_11").onclick = function(){gogogo(11);};
+  document.getElementById("block_12").onclick = function(){gogogo(12);};
+  document.getElementById("block_13").onclick = function(){gogogo(13);};
+  document.getElementById("block_14").onclick = function(){gogogo(14);};
+  document.getElementById("block_15").onclick = function(){gogogo(15);};
+  document.getElementById("block_16").onclick = function(){gogogo(16);};
+
+  document.getElementById('show_sign').onmouseover=function(){document.getElementById("show").className = "show_out";};
+  document.getElementById('show_sign').onmouseout = function(){document.getElementById("show").className = "show_in";};
+
+}
 
 function isFinish()
 {
-  for(var c1=0;c1<8;c1++)
+  for(var c1=0;c1<16;c1++)
     if(data[c1]!=c1+1)
       return false;
   return true;
 }
 
-function emptyMove()
-{
 
-  if(emptyPosition>2)
-    whoCanMove[0]=emptyPosition-3;
-  else {
-    whoCanMove[0]=-1;
-  }
-
-  if (emptyPosition<6) {
-    whoCanMove[1]=emptyPosition+3;
-  }
-  else {
-    whoCanMove[1]=-1;
-  }
-
-  if(emptyPosition%3!=0)
-    whoCanMove[2]=emptyPosition-1;
-  else {
-    whoCanMove[2]=-1;
-  }
-
-  if(emptyPosition%3!=2)
-    whoCanMove[3]=emptyPosition+1;
-  else {
-    whoCanMove[3]=-1;
-  }
-}
-
-function direction(positionInBlock)
-{
-  switch (whoCanMove.indexOf(positionInBlock)) {
-    case 0:
-      down(positionInBlock);
-      break;
-    case 1:
-      up(positionInBlock);
-      break;
-    case 2:
-      right(positionInBlock);
-      break;
-    case 3:
-      left(positionInBlock);
-      break;
-    default:
-      break;
-  }
-  emptyMove();
-}
-
-function right(positionInBlock)
-{
-  var _id=document.getElementById("block_"+data[positionInBlock].toString());
-  var _temp1= 0;
-  if(positionInBlock%3==0)
-    _temp1=242;
-    else if (positionInBlock%3==1) {
-      _temp1=474;
-    }
-  _id.style.left=_temp1.toString()+"px";
-
-  var _id2=document.getElementById("block_"+data[positionInBlock+1].toString());
-  var _temp2=0;
-  if(positionInBlock%3==0)
-    _temp2=10;
-    else if (positionInBlock%3==1) {
-      _temp2=242;
-    }
-  _id2.style.left= _temp2.toString()+"px";
-
-  var temp=data[positionInBlock];
-  data[positionInBlock]=data[positionInBlock+1];
-  data[positionInBlock+1]=temp;
-
-  emptyPosition-=1;
-}
-
-function left(positionInBlock)
-{
-  var _id=document.getElementById("block_"+data[positionInBlock].toString());
-  var _temp1= 0;
-  if(positionInBlock%3==1)
-    _temp1=10;
-    else if (positionInBlock%3==2) {
-      _temp1=242;
-    }
-  _id.style.left=_temp1.toString()+"px";
-
-  var _id2=document.getElementById("block_"+data[positionInBlock-1].toString());
-  var _temp2=0;
-  if(positionInBlock%3==1)
-    _temp2=242;
-    else if (positionInBlock%3==2) {
-      _temp2=474;
-    }
-  _id2.style.left= _temp2.toString()+"px";
-
-  var temp=data[positionInBlock];
-  data[positionInBlock]=data[positionInBlock-1];
-  data[positionInBlock-1]=temp;
-
-  emptyPosition+=1;
-}
-
-function up(positionInBlock)
-{
-  var _id=document.getElementById("block_"+data[positionInBlock].toString());
-  var _temp1= 0;
-  if(positionInBlock>5)
-    _temp1=242;
-    else {
-      _temp1=10;
-    }
-  _id.style.top=_temp1.toString()+"px";
-
-  var _id2=document.getElementById("block_"+data[positionInBlock-3].toString());
-  var _temp2=0;
-  if(positionInBlock>5)
-    _temp2=474;
-    else {
-      _temp2=242;
-    }
-  _id2.style.top= _temp2.toString()+"px";
-
-  var temp=data[positionInBlock];
-  data[positionInBlock]=data[positionInBlock-3];
-  data[positionInBlock-3]=temp;
-
-  emptyPosition+=3;
-}
-
-function down(positionInBlock)
-{
-  var _id=document.getElementById("block_"+data[positionInBlock].toString());
-  var _temp1= 0;
-  if(positionInBlock<3)
-    _temp1=242;
-    else {
-      _temp1=472;
-    }
-  _id.style.top=_temp1.toString()+"px";
-
-  var _id2=document.getElementById("block_"+data[positionInBlock+3].toString());
-  var _temp2=0;
-  if(positionInBlock<3)
-    _temp2=10;
-    else {
-      _temp2=242;
-    }
-  _id2.style.top= _temp2.toString()+"px";
-
-  var temp=data[positionInBlock];
-  data[positionInBlock]=data[positionInBlock+3];
-  data[positionInBlock+3]=temp;
-
-  emptyPosition-=3;
-}
-
-
-function gogogo(id_position)
+function gogogo(position)
 {
   if(pan == 0)
-    window.alert("The game hasn't started yet.");
-  else
-  {
-    direction(data.indexOf(id_position));
+    return;
 
-    if(isFinish())
+  var id_position = 0;
+
+  for(var c1=0;c1<16;c1++)
+  {
+    if(data[c1]==position)
     {
-      window.alert("You win!!!")
-      pan = 0;
+      id_position = c1+1;
     }
   }
+  if(id_position ==emptyPosition+4||id_position ==emptyPosition-4||id_position ==emptyPosition+1||id_position ==emptyPosition-1 ) {
+      document.getElementById("block_"+position.toString()).className = "position"+ emptyPosition.toString();
+      document.getElementById("block_16").className = "position"+id_position.toString();
+      data[emptyPosition-1] = position;
+      data[id_position-1] = 16;
+      emptyPosition = id_position;
+  }
+
+  if(isFinish())
+  {
+    document.getElementById("show").className = "show_out";
+  }
 }
+
 
 function begin()
 {
   pan = 1;
-  var temp=0;
-  var c_temp=0;
-  var range = new Array(1,2,3,4,5,6,7,8,9)
-  for(var c1=0;c1<9;c1++)
+  document.getElementById("show").className = "show_in";
+  function isValid()
   {
-    temp=parseInt(Math.random()*(9-c1));//0~8
-    data[c1]=range[temp];
-    var temp_id = document.getElementById("block_"+data[c1].toString());
-
-    if(c1%3 == 0)
-      temp_id.style.left="10px";
-    else if (c1%3 == 1) {
-      temp_id.style.left="242px";
-    }
-    else {
-      temp_id.style.left="474px";
+    var count = 0;
+    for (var c1 = 0; c1 < 16; c1++) {
+        for (var c2 = c1+1; c2 < 16; c2++) {
+            if (data[c2] < data[c1]) {
+                count++;
+            }
+        }
     }
 
-    if(c1<3)
+    for(var c1=0;c1<16;c1++)
     {
-      temp_id.style.top ="10px";
+      if(data[c1]== 16)
+      {
+        count += c1/4  + c1%4;
+      }
     }
-    else if (c1>5) {
-      temp_id.style.top = "474px";
-    }
-    else {
-      temp_id.style.top = "242px";
-    }
-    range.splice(temp,1);
+
+    return count%2==0;
   }
 
-  emptyPosition=data.indexOf(9);
-
-  emptyMove();
-}
-
-function init()
-{
-  pan = 0;
-  
-  for(var c1=0;c1<9;c1++)
-  {
-    data[c1]=c1+1;
-    var temp_id = document.getElementById("block_"+data[c1].toString());
-    if(c1%3 == 0)
-      temp_id.style.left="10px";
-    else if (c1%3 == 1) {
-      temp_id.style.left="242px";
-    }
-    else {
-      temp_id.style.left="474px";
-    }
-
-    if(c1<3)
+  do{
+    var range = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)
+    for(var c1=0;c1<16;c1++)
     {
-      temp_id.style.top ="10px";
+      temp=parseInt(Math.random()*(16-c1));//0~8
+      data[c1]=range[temp];
+      range.splice(temp,1);
     }
-    else if (c1>5) {
-      temp_id.style.top = "474px";
-    }
-    else {
-      temp_id.style.top = "242px";
+  }while(isValid());
+
+  for(var c1=1;c1<=16;c1++)
+  {
+    document.getElementById("block_"+data[c1-1].toString()).className = "position"+c1.toString();
+    if (data[c1-1]==16) {
+      emptyPosition = c1;
     }
   }
-
-  emptyPosition=8;
-  emptyMove();
 }
