@@ -13,16 +13,25 @@
   background-color: rgba(0,0,255,0.1);
 }
 
+.pic1
+{
+  background-image: url('img/picture.jpg');
+}
+
+.pic0
+{
+  background-image: url('img/panda.jpg');
+}
+
 #show
 {
   position: absolute;
-  background-image: url('img/picture.jpg');
   top: 25px;
   height: 800px;
   width: 800px;
   border-radius: 7%;
   background-color: rgba(0, 0, 0, 0.5);
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
 }
 .show_in
 {
@@ -78,6 +87,17 @@
   font-family: serif;
 }
 
+#pic_sign
+{
+  position: absolute;
+  width: 151px;
+  height: 55px;
+  left: 140px;
+  bottom: 2px;
+  font-size: 33pt;
+  font-family: serif;
+}
+
 #pic
 {
   position: absolute;
@@ -91,12 +111,11 @@
 
 #block_1
 {
-  background-image: url("img/picture.jpg");
   background-position: 0 0;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position1
@@ -107,12 +126,11 @@ left:10px;
 
 #block_2
 {
-  background-image: url("img/picture.jpg");
   background-position: -200px 0px;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position2
@@ -124,12 +142,11 @@ left:10px;
 
 #block_3
 {
-  background-image: url("img/picture.jpg");
   background-position: -400px 0;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position3
@@ -140,12 +157,11 @@ left:10px;
 
 #block_4
 {
-  background-image: url("img/picture.jpg");
   background-position: -600px 0;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position4
@@ -156,12 +172,11 @@ left:10px;
 
 #block_5
 {
-  background-image: url("img/picture.jpg");
   background-position: 0 -200px;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position5
@@ -172,12 +187,11 @@ left:10px;
 
 #block_6
 {
-  background-image: url("img/picture.jpg");
   background-position: -200px -200px;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position6
@@ -189,12 +203,11 @@ left:10px;
 
 #block_7
 {
-  background-image: url("img/picture.jpg");
   background-position: -400px -200px;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position7
@@ -205,12 +218,11 @@ left:10px;
 
 #block_8
 {
-  background-image: url("img/picture.jpg");
   background-position: -600px -200px;;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position8
@@ -221,12 +233,11 @@ left:10px;
 
 #block_9
 {
-  background-image: url("img/picture.jpg");
   background-position: 0px -400px;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position9
@@ -237,12 +248,11 @@ left:10px;
 
 #block_10
 {
-  background-image: url("img/picture.jpg");
   background-position: -200px -400px;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position10
@@ -254,12 +264,11 @@ left:10px;
 
 #block_11
 {
-  background-image: url("img/picture.jpg");
   background-position: -400px -400px;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position11
@@ -270,12 +279,11 @@ left:10px;
 
 #block_12
 {
-  background-image: url("img/picture.jpg");
   background-position: -600px -400px;;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position12
@@ -286,12 +294,11 @@ left:10px;
 
 #block_13
 {
-  background-image: url("img/picture.jpg");
   background-position: 0px -600px;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position13
@@ -302,12 +309,11 @@ left:10px;
 
 #block_14
 {
-  background-image: url("img/picture.jpg");
   background-position: -200px -600px;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position14
@@ -319,12 +325,11 @@ left:10px;
 
 #block_15
 {
-  background-image: url("img/picture.jpg");
   background-position: -400px -600px;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position15
@@ -335,16 +340,16 @@ left:10px;
 
 #hah
 {
-  background-image: url("img/picture.jpg");
   background-position: -600px -600px;;
 
 }
 #block_16
 {
+  opacity: 0;
   width: 200px;
   height: 200px;
   position:absolute;
-  transition-duration: 1s;
+  transition-duration: 0.2s;
 }
 
 .position16
